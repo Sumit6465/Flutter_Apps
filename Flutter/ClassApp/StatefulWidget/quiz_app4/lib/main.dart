@@ -82,30 +82,35 @@ class _QuizAppState extends State {
         stateChange == ii) {
       if (for1 == true) {
         for1 = false;
+        
       }
     }
     if (countIndex == 2 && ii == questionList[countIndex - 1]["correctAns"] ||
         stateChange == ii) {
       if (for2 == true) {
         for2 = false;
+        
       }
     }
     if (countIndex == 3 && ii == questionList[countIndex - 1]["correctAns"] ||
         stateChange == ii) {
       if (for3 == true) {
         for3 = false;
+        
       }
     }
     if (countIndex == 4 && ii == questionList[countIndex - 1]["correctAns"] ||
         stateChange == ii) {
       if (for4 == true) {
         for4 = false;
+        
       }
     }
     if (countIndex == 5 && ii == questionList[countIndex - 1]["correctAns"] ||
         stateChange == ii) {
       if (for5 == true) {
         for5 = false;
+        
       }
     }
   }
