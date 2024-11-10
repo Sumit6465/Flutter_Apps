@@ -16,40 +16,46 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(width: 20, height: 450, color: Colors.brown)
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 270,
-                    height: 45,
-                    color: Colors.orange,
-                  ),
-                  Container(
-                    width: 270,
-                    height: 45,
-                    color: Colors.white,
-                    child: Image.network(
-                        "https://cdn.pixabay.com/photo/2023/04/06/16/29/ashoka-chakra-7904695_640.png"),
-                  ),
-                  Container(
-                    width: 270,
-                    height: 45,
-                    color: Colors.green,
-                  ),
-                ],
-              )
-            ],
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(width: 15, height: 500, color: Colors.brown[900])
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 270,
+                      height: 45,
+                      color: Colors.orange,
+                    ),
+                    Container(
+                      width: 270,
+                      height: 45,
+                      color: Colors.white,
+                      child: Image.network(
+                          "https://cdn.pixabay.com/photo/2023/04/06/16/29/ashoka-chakra-7904695_640.png"),
+                    ),
+                    Container(
+                      width: 270,
+                      height: 45,
+                      color: Colors.green,
+                    ),
+                    Container(
+                      height: 340,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );
