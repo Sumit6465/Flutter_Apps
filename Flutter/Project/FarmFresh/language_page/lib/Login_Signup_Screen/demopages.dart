@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:language_page/language_page.dart';
+import 'package:language_page/Login_Signup_Screen/Login_page.dart';
+
+//import 'package:language_page/language_page.dart';
 
 class InfoSlidesPage extends StatefulWidget {
   const InfoSlidesPage({super.key});
@@ -40,11 +42,15 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch, // Ensure buttons stretch across the width
+            crossAxisAlignment: CrossAxisAlignment
+                .stretch, // Ensure buttons stretch across the width
             children: [
               const Text(
                 "Login",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.green),
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green),
                 textAlign: TextAlign.center, // Center align text
               ),
               const SizedBox(height: 20),
@@ -52,10 +58,12 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
               buildLoginSection("Shop Fresh Produce:", "Login as Customer"),
               const SizedBox(height: 20),
               // Seller Login Text and Button
-              buildLoginSection("Sell Fresh Produce:", "Login as Farmer/Seller"),
+              buildLoginSection(
+                  "Sell Fresh Produce:", "Login as Farmer/Seller"),
               const SizedBox(height: 20),
               // Delivery Person Login Text and Button
-              buildLoginSection("Deliver Fresh Produce:", "Login as Delivery Person"),
+              buildLoginSection(
+                  "Deliver Fresh Produce:", "Login as Delivery Person"),
               const SizedBox(height: 30),
             ],
           ),
@@ -74,7 +82,10 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
             padding: const EdgeInsets.only(left: 20),
             child: Text(
               labelText,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.green),
+              style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green),
             ),
           ),
           ElevatedButton(
@@ -83,12 +94,14 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
               backgroundColor: Colors.green,
               minimumSize: const Size.fromHeight(40), // Set button height
             ),
-            child: Text(buttonText, style: const TextStyle(fontSize: 15, color: Colors.white)),
+            child: Text(buttonText,
+                style: const TextStyle(fontSize: 15, color: Colors.white)),
           ),
         ],
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +129,7 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
                     "assets/pre order1.jpg",
                     "assets/fast delivery1.jpg",
                   ];
-                  
+
                   final titleList = [
                     "Direct Farmer-Customer Connection",
                     "Dynamic Pricing Control",
@@ -170,7 +183,8 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
                         const SizedBox(height: 10),
                         Text(
                           descriptionList[index],
-                          style: const TextStyle(fontSize: 16, color: Colors.black87),
+                          style: const TextStyle(
+                              fontSize: 16, color: Colors.black87),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -211,16 +225,18 @@ class _InfoSlidesPageState extends State<InfoSlidesPage> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
-                }else{
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                  return const LangPage();
-                }));
+                } else {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const LoginPage();
+                  }));
                 }
               },
               backgroundColor: Colors.white,
-              child:const Text("Back",
+              child: const Text(
+                "Back",
                 style: TextStyle(color: Colors.green),
-              ), 
+              ),
             ),
             FloatingActionButton(
               onPressed: () {

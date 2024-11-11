@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:language_page/info_slides.dart';
+
+import 'package:language_page/Start_Screens/info_slides.dart';
 
 class LangPage extends StatefulWidget {
   const LangPage({super.key});
@@ -10,7 +11,7 @@ class LangPage extends StatefulWidget {
 
 class _LangPageState extends State<LangPage> {
   String _selectedItem = 'English';
-  String? _selectedLanguage; 
+  String? _selectedLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,13 @@ class _LangPageState extends State<LangPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 170), 
+              const SizedBox(height: 170),
               const Text(
                 "Language",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               const SizedBox(height: 20),
               Container(
@@ -57,13 +61,17 @@ class _LangPageState extends State<LangPage> {
               const SizedBox(height: 20),
               const Text(
                 "Choose from:",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               // const SizedBox(height: 4),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: const EdgeInsets.only(left:40.0, right: 40.0, top:15, bottom: 15),
+                  padding: const EdgeInsets.only(
+                      left: 40.0, right: 40.0, top: 15, bottom: 15),
                   childAspectRatio: 2,
                   children: [
                     _buildLanguageOption("English"),
@@ -75,24 +83,39 @@ class _LangPageState extends State<LangPage> {
                   ],
                 ),
               ),
+
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const InfoSlidesPage();
+                    }));
+                  },
+                  child: const Text(
+                    "Next",
+                    style: TextStyle(color: Colors.green),
+                  )),
+              const SizedBox(
+                height: 150,
+              ),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return const InfoSlidesPage();
-          }));
-        },
-        backgroundColor: Colors.white,
-        child: const Text(
-          "Next",
-          style: TextStyle(
-            color: Colors.green,
-          ),
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      //       return const InfoSlidesPage();
+      //     }));
+      //   },
+      //   backgroundColor: Colors.white,
+      //   child: const Text(
+      //     "Next",
+      //     style: TextStyle(
+      //       color: Colors.green,
+      //     ),
+      //   ),
+      // ),
     );
   }
 
@@ -101,7 +124,7 @@ class _LangPageState extends State<LangPage> {
       onTap: () {
         setState(() {
           _selectedItem = language;
-          _selectedLanguage = language; 
+          _selectedLanguage = language;
         });
       },
       child: Container(
@@ -115,7 +138,8 @@ class _LangPageState extends State<LangPage> {
             language,
             style: TextStyle(
               fontSize: 18,
-              color: _selectedLanguage == language ? Colors.white : Colors.green,
+              color:
+                  _selectedLanguage == language ? Colors.white : Colors.green,
             ),
           ),
         ),
